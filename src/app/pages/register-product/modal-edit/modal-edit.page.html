@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="editProducts()">
+    <ion-list class="mx-3">
+      <ion-item>
+          <ion-label>Categoria</ion-label>
+          <ion-select formControlName="id_categories">
+              <ion-select-option *ngFor="let c of categories" [value]="c.id" >{{c.category}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-input formControlName="description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Precio</ion-label>
+        <ion-input formControlName="price"></ion-input>
+      </ion-item>
+      
+      <ion-button color="medium" class="mt-3" expand="full" type="submit">Actualizar</ion-button>
+    </ion-list>
+  </form>
+</ion-content>

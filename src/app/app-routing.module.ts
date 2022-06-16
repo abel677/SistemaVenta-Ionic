@@ -10,7 +10,31 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('./pages/categories/categories.module').then( m => m.CategoriesPageModule)
+  },
+  {
+    path: 'register-product',
+    loadChildren: () => import('./pages/register-product/register-product.module').then( m => m.RegisterProductPageModule)
+  },
+  {
+    path: 'catalogue',
+    loadChildren: () => import('./pages/catalogue/catalogue.module').then( m => m.CataloguePageModule)
+  },
+  {
+    path: 'products/:id',
+    loadChildren: () => import('./pages/products/products.module').then( m => m.ProductsPageModule)
+  },
+  {
+    path: 'modal-cars',
+    loadChildren: () => import('./pages/modals/modal-cars/modal-cars.module').then( m => m.ModalCarsPageModule)
+  },
+  {
+    path: 'form-venta',
+    loadChildren: () => import('./pages/form-venta/form-venta.module').then( m => m.FormVentaPageModule)
+  },
 ];
 
 @NgModule({

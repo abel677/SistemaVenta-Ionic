@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Catálogo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let c of categories">
+        
+    <ion-card (click)="getProducts(c.id)">
+      <ion-card-header>
+        <ion-card-title>{{c.category}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-img [src] ="'http://127.0.0.1:8000'+c.image"></ion-img>
+      </ion-card-content>
+      
+    </ion-card>
+  </ion-list>
+</ion-content>

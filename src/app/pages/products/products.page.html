@@ -1,0 +1,28 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon (click)="back()" style="zoom:2.0" name="arrow-back-circle-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list #list *ngFor="let p of products">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><b>{{p.description}}</b></ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="text-center">
+        <ion-label>
+          <ion-img [src]="'http://127.0.0.1:8000'+p.image"></ion-img>
+        </ion-label>
+        <ion-item lines="none">
+          <ion-label class="fs-1"><b>{{p.price |currency}}</b></ion-label>
+          <ion-icon (click)="addCart(p.id)" class="btn btn-success"  style="zoom:1.5;" name="cart-outline"></ion-icon>
+        </ion-item>
+      </ion-card-content>
+     </ion-card>
+  </ion-list>
+</ion-content>
+
